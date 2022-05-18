@@ -7,37 +7,37 @@ local libInfo = {
 }
 
 local colors = {
-  background = gpu.getForeground(),
+  white = 0xFFFFFF,
   info = 0x32CD32,
   warn = 0xFFA500,
   error = 0xFF0000,
   start = 0xCD853F
 }
------------------------------------------------------------------------------------------------------
+
 function ConsoleLog.init()
   gpu.setForeground(colors.start)
   print("Console Log Lib initialize")
   os.sleep(1)
-  print("Author ", libInfo.author, "\nVersion ", libInfo.version, "Last ChangeLog ", libInfo.changelog)
-  gpu.setForeground(colors.foreground)
+  print("Author ", libInfo.author, "\nVersion", libInfo.version, "\тLast ChangeLog:\n", libInfo.changelog)
+  gpu.setForeground(colors.white)
 end
 
 function ConsoleLog.infoLog(text)
   gpu.setForeground(colors.info)
   print("[INFO]", text)
-  gpu.setForeground(colors.background)
+  gpu.setForeground(colors.white)
 end
 
 function ConsoleLog.warnLog(text)
   gpu.setForeground(colors.warn)
   print("[WARN]", text)
-  gpu.setForeground(colors.background)
+  gpu.setForeground(colors.white)
 end
 
 function ConsoleLog.errorLog(text)
   gpu.setForeground(colors.error)
   print("[ERROR]", text)
-  gpu.setForeground(colors.background)
+  gpu.setForeground(colors.white)
 end
 return ConsoleLog
 
