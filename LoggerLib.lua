@@ -1,6 +1,7 @@
 local ConsoleLog = {}
+local gpu = require('component').gpu
 local libInfo = {
-  version = = "1.0.0",
+  version = "1.0.0",
   author = "zayats",
   changelog = ""
 }
@@ -13,7 +14,7 @@ local colors = {
   start = 0xCD853F
 }
 -----------------------------------------------------------------------------------------------------
-function init()
+function ConsoleLog.init()
   gpu.setForeground(colors.start)
   print("Console Log Lib initialize")
   os.sleep(1)
@@ -21,21 +22,22 @@ function init()
   gpu.setForeground(colors.foreground)
 end
 
-function infoLog(text)
+function ConsoleLog.infoLog(text)
   gpu.setForeground(colors.info)
   print("[INFO]", text)
   gpu.setForeground(colors.background)
 end
 
-function warnLog(text)
+function ConsoleLog.warnLog(text)
   gpu.setForeground(colors.warn)
   print("[WARN]", text)
   gpu.setForeground(colors.background)
 end
 
-function errorLog(text)
+function ConsoleLog.errorLog(text)
   gpu.setForeground(colors.error)
   print("[ERROR]", text)
   gpu.setForeground(colors.background)
 end
 return ConsoleLog
+
