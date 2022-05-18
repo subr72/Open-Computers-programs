@@ -2,7 +2,7 @@ local shell = require("shell")
 local fs = require("filesystem")
 local computer = require("computer")
 local applications = {
-  { "https://github.com/subr72/Open-Computers-programs/blob/main/LoggerLib.lua", "lib/LoggerLib.lua" },
+  { "https://github.com/subr72/Open-Computers-programs/blob/main/LoggerLib.lua", "/lib/LoggerLib.lua" },
 }
 for i = 1, #applications do
   print("Download " .. applications[i][2])
@@ -14,5 +14,5 @@ print("All files was download, reboot computer?(Y/y)")
 if io.read() == "Y" or io.read() == "y" then
   computer.shutdown(true)
 else
-    return
+  print("Press CTRL + ALT + C")
 end
