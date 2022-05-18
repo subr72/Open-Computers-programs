@@ -3,8 +3,9 @@ local gpu = require('component').gpu
 local libInfo = {
   version = "1.0.0",
   author = "zayats",
-  changelog = ""
+  changelog = " "
 }
+w, h = gpu.getResolution()
 
 local colors = {
   white = 0xFFFFFF,
@@ -17,9 +18,10 @@ local colors = {
 function ConsoleLog.init()
   gpu.setForeground(colors.start)
   print("Console Log Lib initialize")
-  os.sleep(1)
-  print("Author ", libInfo.author, "\nVersion", libInfo.version, "\тLast ChangeLog:\n", libInfo.changelog)
+  print("Author ", libInfo.author, "\nVersion", libInfo.version, "\nLast ChangeLog:\n", libInfo.changelog)
   gpu.setForeground(colors.white)
+  os.sleep(1)
+  gpu.fill(1, 1, w, h, " ")
 end
 
 function ConsoleLog.infoLog(text)
