@@ -42,7 +42,7 @@ function checkComponents()
     log.infoLog("Chat Box is Avaliable!")
     chat_box = component.chat_box
     chat_box.setName(options.chat_boxName)
-    chat_box.setDsitance(options.chat_boxRedius)
+    chat_box.setDistance(options.chat_boxRadius)
   else 
     log.errorLog("Chat Box not found!")
     os.exit()
