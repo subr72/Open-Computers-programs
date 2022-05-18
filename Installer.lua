@@ -12,7 +12,7 @@ for i = 1, #applications do
 end
 print("All files was download, reboot computer?(Y/y)")
 if io.read() == "Y" or io.read() == "y" then
-  computer.shutdown()
+  computer.shutdown(true)
 else
     break
 end
