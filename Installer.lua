@@ -2,7 +2,7 @@ local shell = require("shell")
 local fs = require("filesystem")
 local computer = require("computer")
 local applications = {
-  { "https://github.com/subr72/Open-Computers-programs/blob/main/LoggerLib.lua", "/lib/LoggerLib.lua" },
+  { "https://raw.githubusercontent.com/subr72/Open-Computers-programs/main/LoggerLib.lua", "/lib/LoggerLib.lua" },
 }
 for i = 1, #applications do
   print("Download " .. applications[i][2])
