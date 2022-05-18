@@ -1,6 +1,6 @@
 local shell = require("shell")
 local fs = require("filesystem")
-local computer = require('computer")
+local computer = require("computer")
 local applications = {
   { "https://github.com/subr72/Open-Computers-programs/blob/main/LoggerLib.lua", "lib/LoggerLib.lua" },
 }
@@ -13,4 +13,6 @@ end
 print("All files was download, reboot computer?(Y/y)")
 if io.read() == "Y" or io.read() == "y" then
   computer.shutdown()
+else
+    break
 end
