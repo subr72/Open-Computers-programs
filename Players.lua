@@ -5,10 +5,10 @@ local log = require('LoggerLib')
 local term = require("term")
 sayd = false
 options = {
-  redstone = true, -- currently not used
-  radius = 16, --radar distance
-  chat_boxName = "§aManager", -- name of your chatbox
-  chat_boxRadius = 8 --ChatBox.sya() radius
+  redstone = true,
+  radius = 16,
+  chat_boxName = "§aManager",
+  chat_boxRadius = 8
 }
 
 players = {}
@@ -27,27 +27,27 @@ function checkComponents()
   if component.isAvailable("radar") then
     log.infoLog("Radar is Available!")
     sensor = component.radar
-  else 
+  else
     log.errorLog("Radar not found!")
     os.exit()
   end
   if component.isAvailable("gpu") then
     log.infoLog("GPU is Available")
     gpu = component.gpu
-  else 
-    log.errorLog("GPU not found") 
+  else
+    log.errorLog("GPU not found")
     os.exit()
-  end 
+  end
   if component.isAvailable("chat_box") then
     log.infoLog("Chat Box is Avaliable!")
     chat_box = component.chat_box
     chat_box.setName(options.chat_boxName)
-    chat_box.setDistance(options.chat_boxRadius)
-  else 
+    chat_box.setDsitance(options.chat_boxRadius)
+  else
     log.errorLog("Chat Box not found!")
     os.exit()
   end
-end 
+end
 
 function getPlayers()
   players = sensor.getPlayers()
@@ -56,19 +56,20 @@ function getPlayers()
       if #players >= 2 then
         log.warnLog("Players > 2!")
         redstone.setOutput(1,15)
-        if sayd then 
-          return 
-        else 
+        if sayd then
+          return
+        else
           chat_box.say("§42 игрока в комнате! Система выключена. §aВ комнате должно быть не более 2 игроков.")
           sayd = true
         end
-      else 
+      else
         log.infoLog(players[i].name)
         sayd = false
         redstone.setOutput(1,0)
       end
     end
   end
+  i = i + 1
   os.sleep(1)
 end
 
@@ -81,4 +82,3 @@ while true do
   getPlayers()
   os.sleep(0.01)
 end
-
