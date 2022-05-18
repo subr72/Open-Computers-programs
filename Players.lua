@@ -6,8 +6,9 @@ local term = require("term")
 sayd = false
 options = {
   redstone = true, -- currently not used
-  radius = 16, --raduis
-  chat_boxName = "§aManager" --name of your chat_box
+  radius = 16, --radar distance
+  chat_boxName = "§aManager", -- name of your chatbox
+  chat_boxRadius = 8 --ChatBox.sya() radius
 }
 
 players = {}
@@ -41,6 +42,7 @@ function checkComponents()
     log.infoLog("Chat Box is Avaliable!")
     chat_box = component.chat_box
     chat_box.setName(options.chat_boxName)
+    chat_box.setDsitance(options.chat_boxRedius)
   else 
     log.errorLog("Chat Box not found!")
     os.exit()
@@ -79,3 +81,4 @@ while true do
   getPlayers()
   os.sleep(0.01)
 end
+
