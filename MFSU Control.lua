@@ -21,7 +21,7 @@ function getCapacityMFSU()
   return mfsu.getCapacity()
 end 
 function OnOff()
-  if if getEnergyMFSU() >= (getCapacityMFSU() - 1000) then 
+  if getEnergyMFSU() >= (getCapacityMFSU() - 1000) then 
     setRedstone("off")
     gpu.setForeground(0xFF0000)
     gpu.set(1, 1, "Off ")
