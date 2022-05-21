@@ -3,7 +3,8 @@ local fs = require("filesystem")
 local computer = require("computer")
 local applications = {
   {"https://raw.githubusercontent.com/subr72/Open-Computers-programs/main/LoggerLib.lua", "/lib/LoggerLib.lua", "LoggerLib"},
-  {"https://raw.githubusercontent.com/subr72/Open-Computers-programs/main/Players.lua", "Players.lua", "Players"}
+  {"https://raw.githubusercontent.com/subr72/Open-Computers-programs/main/Players.lua", "Players.lua", "Players"},
+  {"https://raw.githubusercontent.com/subr72/Open-Computers-programs/main/MFSU%20Control.lua","Energy.lua","MFSU Control"}
 }
 print("All my programs:")
 print("=NUM==========NAME===========")
